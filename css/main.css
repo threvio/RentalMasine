@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --primary-color: #f90;
+    --secondary-color: #042e4f;
+    --transition-time: 0.25s ease all;
+}
+
+body {
+    font-family: 'Roboto', sans-serif ;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+    letter-spacing: 1.4px;
+}
+
+/* Basic */
+ul {
+    list-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+h1,h2 {
+    line-height: 1.2;
+}
+
+p {
+    margin: 10px 0;
+}
+
+img {
+    width: 100%;
+}
+
+/* Layout */
+.container {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-1-2, .col-1-3, .col-1-4, .col-2-3 {
+    flex-basis: 100%;
+    padding: 0 15px;
+}
+
+.col-1-2 {
+    flex-basis: 50%;
+}
+
+.col-1-3 {
+    flex-basis: 33.333%;
+}
+
+.col-1-4 {
+    flex-basis: 25%;
+}
+
+.col-2-3 {
+    flex-basis: 66.666%;
+}
+
+
+.active {
+    background-color: var(--primary-color);
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    transition: var(--transition-time);
+}
+
+.active:hover {
+    color: #fff;
+}
+
+/* Above Header */
+
+header {
+    padding: 30px 0;
+}
+
+.above-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.above-header .logo a {
+    display: flex;
+}
+
+.above-header i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+}
+
+.above-header .logo h1 {
+    font-size: 30px;
+    color: var(--primary-color);
+}
+
+.above-header .logo h1 span {
+    display: block;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 5px;
+    color: var(--secondary-color);
+}
+
+.above-header .icon {
+    width: 45px;
+    margin-right: 15px;
+}
+
+.above-header.icon i {
+    font-size: 18px;
+    border: 1px solid #e5e5e5;
+    color: var(--secondary-color);
+    padding: 8px 12px;
+}
+
+.above-header .info-1, .above-header .info-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.above-header .info-1 h3, .above-header .info-2 h3 {
+    font-size: 15px;
+}
+
+.above-header .info-1 p, .above-header .info-2 p {
+    font-size: 12px;
+    margin: 0;
+}
+
+.above-header .info-1 span, .above-header .info-2 span {
+    color: var(--primary-color);
+}
+
+/* Navigacija */
+
+nav {
+    background-color: var(--secondary-color);
+    margin-top: 15px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 10px #000;
+    z-index: 9999;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+nav ul li a {
+    color: #fff;
+    display: block;
+    padding: 18px 30px;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 2px;
+    transition: var(--transition-time);
+}
+
+nav ul li a:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+nav ul li a.current {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+nav a.icon {
+    display: none;
+}
+
+/* Hero */
+.hero {
+    background: url(../img/buldozer.jpg) no-repeat top center / cover;
+    position: relative;
+    height: 80vh;
+    background-attachment: fixed;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.hero * {
+    z-index: 9;
+}
+
+.hero .content {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero .content h2 {
+    font-size: 60px;
+    line-height: 1;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.hero .content p {
+    color: #cdcdcd;
+    margin: 15px 0 30px;
+}
+
+.hero .content .action {
+    display: flex;
+    flex-direction: row;
+}
+
+.hero .content .action a:not(.active) {
+    color:#333;
+    background-color: #fff;
+    margin-left: 15px;
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    transition: var(--transition-time);
+}
+
+.hero .content .action a:hover {
+    border-radius: 0;
+}
+
+/* Info */
+#info {
+    text-align: center;
+    background-color: var(--primary-color);
+    padding: 65px 0 80px;
+}
+
+#info h2 {
+    color: #fff;
+    font-size: 40px;
+    text-transform: capitalize;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+#info h2::after {
+    content: "";
+    position: absolute;
+    width: 4%;
+    height: 3px;
+    background-color: var(--secondary-color);
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.icons {
+    padding: 30px;
+}
+.icons h3 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.icons i {
+    color: #fff;
+    background-color: var(--secondary-color);
+    padding: 16px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    font-size: 20px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--secondary-color);
+    transition: var(--transition-time);
+}
+
+.icons i:hover {
+    background-color: transparent;
+}
+
+
+/* Welcome */
+#welcome .col-1-2.roller {
+    background: url(../img/buldozer2welcome.jpg) no-repeat center center / cover;
+}
+
+#welcome .col-1-2.p-4 {
+    padding: 80px 0 80px 40px;
+}
+
+#welcome .col-1-2 h3 {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+#welcome .col-1-2 h2 {
+    font-size: 40px;
+    color: #000;
+    margin: 10px 0 30px;
+    text-transform: capitalize;
+}
+
+#welcome .col-1-2 p {
+    color: #6c757d;
+    line-height: 2;
+    margin: 0;
+}
+
+#welcome .col-1-2 .row {
+    justify-content: space-between;
+}
+
+#welcome .col-1-2 .row .col-1-2 {
+    background-color: var(--secondary-color);
+    flex-basis: 45%;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+#welcome .col-1-2 .row .col-1-2 .primary-color {
+    color: var(--primary-color);
+    font-size: 30px;
+    font-weight: bold;
+}
+#welcome .col-1-2 .row .col-1-2 h4 {
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+
